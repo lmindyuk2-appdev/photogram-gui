@@ -14,4 +14,12 @@ class PhotosController < ActionController::Base
       render({ :template => "photos_templates/show.html.erb"})
     end
   end
+
+  def delete
+    url_photo = params.fetch("path_id")
+    matching_photos = Photo.where({:id => url_photo})
+    @the_photo = matching_photos.at(0)
+    @the_photo.destroy
+    redirect_to("/photos")
+  end
 end
