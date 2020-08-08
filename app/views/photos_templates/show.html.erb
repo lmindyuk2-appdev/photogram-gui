@@ -53,15 +53,15 @@
   <% @the_photo.comments.each do |a_comment|%>
   <tr>
     <td>
-      <%=@a_comment.commenter.username%>
+      <%=a_comment.commenter.username%>
     </td>
 
     <td>
-      <%=@a_comment.body%>
+      <%=a_comment.body%>
     </td>
 
     <td>
-      <%=@a_comment.created_at%>
+      <%=a_comment.created_at%>
     </td>
   </tr>
   <%end%>

@@ -15,7 +15,11 @@
   </dt>
 
   <dd>
-  Form goes here
+    <form action="/update_user/<%=@the_user.id%>" >
+    <label for="browser_username">Username</label>
+    <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @the_user.username%>">
+
+    <button>Update user</button>
   </dd>
 </dl>
 
@@ -63,7 +67,7 @@
     </td>
 
     <td>
-    <a href="/users/<%=@the_user.username%>%">Show details</a>
+    <a href="/photos/<%=a_photo.id%>">Show details</a>
     </td>
 
   </tr>
