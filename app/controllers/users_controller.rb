@@ -17,15 +17,11 @@ class UsersController < ActionController::Base
   end
 
   def create
-    input_image = params.fetch("input_image")
-    input_caption = params.fetch("input_caption")
-    input_owner_id = params.fetch("input_owner_id")
-    a_new_photo = User.new
-    a_new_photo.image = input_image
-    a_new_photo.caption = input_caption
-    a_new_photo.owner_id = input_owner_id
-    a_new_photo.save
-    redirect_to("/photos/"+a_new_photo.id.to_s)
+    input_username = params.fetch("input_username")
+    a_new_user = User.new
+    a_new_user.username = input_username
+    a_new_user.save
+    redirect_to("/users/"+a_new_user.username)
   end
 
   def update
